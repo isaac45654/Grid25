@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>GRID25</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="title-group">
+
+            <h1>GRID25</h1>
+
+            <div id="puzzleNumber" class="puzzle-number">
+                Puzzle #1
+            </div>
+
+        </div>
+
+        <div class="topButtons">
+    <button id="statsButton">🏆</button>
+    <button id="infoButton">ⓘ</button>
+</div>
+
+    </header>
+
+    <!-- ================= GRID ================= -->
+
+    <div id="grid" class="grid"></div>
+
+    <!-- ================= CURRENT WORD ================= -->
+
+    <div class="current-word-container">
+
+        <div id="currentWord" class="current-word">
+            &nbsp;
+        </div>
+
+        <p id="message" class="message"></p>
+
+    </div>
+
+    <!-- ================= BUTTONS ================= -->
+
+    <div class="button-row">
+
+        <button id="clearButton" class="secondary-button">
+            Clear
+        </button>
+
+        <button id="submitButton" class="primary-button">
+            Submit
+        </button>
+
+    </div>
+
+    <!-- ================= FOUND WORDS ================= -->
+
+    <section class="found-section">
+
+        <h2>Found Words</h2>
+
+        <div id="foundWords" class="found-words"></div>
+
+    </section>
+
+</div>
+
+<!-- ================= INFO POPUP ================= -->
+
+<div id="infoModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>How To Play</h2>
+
+        <p>Tap letters to spell words.</p>
+
+        <p>Press <strong>Submit</strong>.</p>
+
+        <p>Enter words of 4 or more letters to make the letters disappear.</p>
+
+        <p>Double tap a found word to return it to the board.</p>
+
+        <p>Remove every letter to complete the puzzle.</p>
+
+        <p>If you make a mistake while entering a word, tap a letter to remove it.</p>
+
+        <p>There is a new puzzle every day.</p>
+
+        </p>Check your streak and data by clicking the statistics button.<p>
+
+        <br>
+
+        <p class="creator">
+            Created by Isaac Engelman
+        </p>
+
+        <button id="closeInfoButton" class="modal-button">
+    Close
+</button>
+
+    </div>
+
+</div>
+
+<div id="statsModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>Statistics</h2>
+
+        <div class="statRow">
+            <span>Puzzles Completed</span>
+            <strong id="completedStat">0</strong>
+        </div>
+
+        <div class="statRow">
+            <span>Current Streak</span>
+            <strong id="streakStat">0</strong>
+        </div>
+
+        <div class="statRow">
+            <span>Best Streak</span>
+            <strong id="bestStreakStat">0</strong>
+        </div>
+
+        <div class="statRow">
+            <span>First Played</span>
+            <strong id="firstPlayedStat">-</strong>
+        </div>
+
+        <button id="closeStatsButton" class="modal-button">
+    Close
+</button>
+
+    </div>
+
+</div>
+
+<!-- ================= WIN POPUP ================= -->
+
+<div id="winModal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2>Today's Puzzle Complete!</h2>
+
+        <p>Come back tomorrow for a new challenge.</p>
+
+        <p id="countdown"></p>
+
+        <button id="nextPuzzleButton" class="primary-button">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= AUDIO ================= -->
+
+<audio id="correctSound" preload="auto">
+    <source src="sounds/correct.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="wrongSound" preload="auto">
+    <source src="sounds/wrong.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="winSound" preload="auto">
+    <source src="sounds/win.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
